@@ -1,14 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
 
 import numpy as np
-import pandas as pd
 
-
-# In[2]:
 
 
 Rotor_1 = ["8","c","x","6","ç","z","f","g","9","h","ı","i","7","j","n","u","k","q","r","5","ş","t","4"," ","v",\
@@ -24,13 +19,10 @@ alphabet = ["a","b","c","ç","d","e","f","g","ğ","h","ı","i","j","k","l","m","
           "0","1","2","3","4","5","6","7","8","9"," ",]
 
 
-# In[3]:
-
 
 encryptedbool = True #True for encrypted, False for descrypted
 
 
-# In[4]:
 
 
 def is_convertible_to_int(str):
@@ -41,7 +33,6 @@ def is_convertible_to_int(str):
         return True #first time we see it, we think it must be reversed but i want to break while loop.
 
 
-# In[5]:
 
 
 Password = "0"
@@ -51,7 +42,6 @@ while(Password[-1] != "E" and Password[-1] != "C" or len(Password) != 7 or is_co
         print("You entered invalid password.")
 
 
-# In[6]:
 
 
 if(Password[-1] == "E"):
@@ -60,7 +50,6 @@ elif(Password[-1] == "C"):
     encryptedbool = False
 
 
-# In[ ]:
 
 
 boolwhile = True 
@@ -75,13 +64,11 @@ while(boolwhile):
         boolwhile = True
 
 
-# In[ ]:
 
 
 enctext = enctext.lower()
 
 
-# In[ ]:
 
 
 def newpassword(password):
@@ -94,7 +81,6 @@ def newpassword(password):
     return newpassword
 
 
-# In[ ]:
 
 
 def Set_RotateRotor(password,Rotors):
@@ -108,7 +94,6 @@ def Set_RotateRotor(password,Rotors):
     return NewRotors
 
 
-# In[ ]:
 
 
 def RotateRotor(Rotor):
@@ -117,19 +102,14 @@ def RotateRotor(Rotor):
     return Rotor
 
 
-# In[ ]:
-
 
 Rotor_1,Rotor_2,Rotor_3 = Set_RotateRotor(Password,[Rotor_1,Rotor_2,Rotor_3])[0],Set_RotateRotor(Password,[Rotor_1,Rotor_2,Rotor_3])[1],Set_RotateRotor(Password,[Rotor_1,Rotor_2,Rotor_3])[2]
 
 
-# In[ ]:
 
 
 lengthofgiventext = len(enctext)
 
-
-# In[ ]:
 
 
 if(encryptedbool):
@@ -162,7 +142,6 @@ else:
             DescryptedText.append(letter)
 
 
-# In[ ]:
 
 
 if(encryptedbool):
@@ -174,8 +153,6 @@ else:
     for x in DescryptedText:
         DescryptedFinal += x
 
-
-# In[ ]:
 
 
 boolwhile1 = True
@@ -192,34 +169,4 @@ while(boolwhile1):
     except:
         print("Invalid file path.")
         boolwhile1 = True
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
