@@ -1,22 +1,23 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-
 import numpy as np
 
 
 
-Rotor_1 = ["8","c","x","6","ç","z","f","g","9","h","ı","i","7","j","n","u","k","q","r","5","ş","t","4"," ","v",\
-          "0","1","ü","2","a","b","s","l","y","m","o","e","ğ","ö","d","p","3"]
 
-Rotor_2 = ["t","e","y","f","1","h","ı","d","7","ğ","ç","k","9","a","n","o","3","p","q","g","r","ş","l","i"," ","j","u","b","ü","v",\
-          "0","m","x","2","c","4","5","s","ö","8","z","6"]
+Rotor_1 = ["8","c","x",")","6","ç",".","-","z","f","g","_","9","?",",","h","ı","i","7","j","n","u","k","q","r","5","ş","t","4"," ","v",\
+          "0","1","ü","2","a","-","b","s","l","y","m","(","o","e","ğ","ö","d","+","p","3"]
 
-Rotor_3 = ["y","b","l","c","p","9","x","e","0","f","n","q","8"," ","g","5","ü","ğ","z","i","ç","j","a","h","o","r","s","d","k","ş","t","u",\
-          "1","ı","ö","v","2","3","4","6","m","7"]
+Rotor_2 = ["t","e",",","y","f","-","1","h","ı","d","7","+","ğ","ç","?","k","9","a",")","n","o","3","p","q",".","g","-","r","ş","l","i","_"," ","j","u","b","ü","v",\
+          "0","m","x","2","c","4","5","s","ö","8","(","z","6"]
+
+Rotor_3 = ["y","b",")","l","c","p","_","9","x","e","0","f","n","q","8"," ","g","5","ü","ğ","z","i","ç","j",".","a","h","o","r","s","d","(","k","ş","t","u","-",\
+          "1","ı","-","ö","v","?","2","3",",","4","6","m","7","+"]
 
 alphabet = ["a","b","c","ç","d","e","f","g","ğ","h","ı","i","j","k","l","m","n","o","ö","p","q","r","s","ş","t","u","ü","v","x","y","z",\
-          "0","1","2","3","4","5","6","7","8","9"," ",]
+          "0","1","2","3","4","5","6","7","8","9"," ",",",".","?","_","-",")","(","+","-"]
+
 
 
 
@@ -37,7 +38,7 @@ def is_convertible_to_int(str):
 
 Password = "0"
 while(Password[-1] != "E" and Password[-1] != "C" or len(Password) != 7 or is_convertible_to_int(Password[0:6])):
-    Password = input("Password(First 6 digit is number and last letter is E for Encrypt, C for Descrypt):",)
+    Password = input("Password(First 6 digit is number and last letter is E for Encrypt, C for Descrypt)\n (Example:010101E) :",)
     if(Password[-1] != "E" and Password[-1] != "C" or len(Password) != 7 or is_convertible_to_int(Password[0:6])):
         print("You entered invalid password.")
 
@@ -65,7 +66,6 @@ while(boolwhile):
 
 
 
-
 enctext = enctext.lower()
 
 
@@ -79,7 +79,6 @@ def newpassword(password):
         while(newpassword[i] > length):
             newpassword[i] -= length
     return newpassword
-
 
 
 
@@ -103,12 +102,13 @@ def RotateRotor(Rotor):
 
 
 
+
 Rotor_1,Rotor_2,Rotor_3 = Set_RotateRotor(Password,[Rotor_1,Rotor_2,Rotor_3])[0],Set_RotateRotor(Password,[Rotor_1,Rotor_2,Rotor_3])[1],Set_RotateRotor(Password,[Rotor_1,Rotor_2,Rotor_3])[2]
 
 
 
-
 lengthofgiventext = len(enctext)
+
 
 
 
@@ -143,7 +143,6 @@ else:
 
 
 
-
 if(encryptedbool):
     EncryptedFinal = ""
     for x in EncryptedTextFinal:
@@ -169,4 +168,8 @@ while(boolwhile1):
     except:
         print("Invalid file path.")
         boolwhile1 = True
+
+
+
+
 
